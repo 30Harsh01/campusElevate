@@ -10,7 +10,7 @@ const router=express.Router()
 router.post('/signup',async(req,res)=>{
     try{
         const{name,regno,password}=req.body
-        console.log(name)
+        // console.log(name)
         if(!name||!regno||!password||name===''||regno===''||password===''){
             return res.status(400).json({error:"All fields are required"})
         }
@@ -21,17 +21,16 @@ router.post('/signup',async(req,res)=>{
         if(userCheck){
             return res.status(404).json({error:'User already exist'})
         }
-    
         // bcryptjs
         const hashPassword=bcryptjs.hashSync(password,10)
-        
         const newUser=await User.create({name,regno,password:hashPassword})
         const data={
             user:{_id:newUser._id}
         }
-        console.log("Token Data:", data)
+        // console.log("Token Data:", data)
     
         const auth=await jwt.sign(data,"harsh")
+
         await newUser.save()
         res.status(201).json({message:"User Created",auth})
     }catch(error){
@@ -58,7 +57,7 @@ router.post('/signin',async(req,res)=>{
         const data={
             user:{_id:userCheck._id}
         }
-        console.log("Token Data:", data)
+        // console.log("Token Data:", data)
     
         const auth=await jwt.sign(data,"harsh")
         res.status(200).json({message:"Login successfull",auth})

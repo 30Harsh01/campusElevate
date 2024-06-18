@@ -1,4 +1,3 @@
-
 const jwt = require('jsonwebtoken');
 const User = require('../module/userSchema.js');
 
@@ -13,12 +12,17 @@ const protectRoute = async (req, res, next) => {
         if (!decoded || !decoded.user || !decoded.user._id) {
             return res.status(401).json({ error: "Invalid token" });
         }
+        
+        // decoded:{
+        //     user:{
+            // _id
+        // }
+        // }
 
         const user = await User.findById(decoded.user._id).select("-password");
         if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
-        
         req.user = user; // Passing the entire user object
         next();
     } catch (error) {
