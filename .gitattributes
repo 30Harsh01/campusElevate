@@ -1,0 +1,2 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+frontend/src/assets/proposal_video.mp4 filter=lfs diff=lfs merge=lfs -text
