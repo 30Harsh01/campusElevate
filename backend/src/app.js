@@ -14,6 +14,9 @@ const libraryRoutes=require('./routes/libraryRoutes.js')
 const lostandfound=require('./routes/lostandfoundsroutes.js')
 const adminRoutes=require('./routes/adminRoutes.js')
 const uploadRoutes=require('./routes/uploadRoutes.js')
+const winston = require('winston');
+const helmet = require('helmet');
+app.use(helmet());
 
 const app=express()
 
@@ -34,8 +37,17 @@ app.use('/donate',donateRoute)
 app.use('/library',libraryRoutes)
 app.use('/lostandfound',lostandfound)
 app.use('/admin',adminRoutes)
-app.use('/upload',uploadRoutes)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads/lostitems'))); // Serve files statically
+// app.use('/upload',uploadRoutes)
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads/lostitems'))); // Serve files statically
+
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.Console(),
+    ],
+});
 
 const port=3000
 app.listen(port,()=>{
