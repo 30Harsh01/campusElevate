@@ -1,10 +1,10 @@
 const express = require('express')
 // const Event = require("../../module/event.js")
-const protectedRoutes=require('../../middleware/protectedRoutes.js')
+const {protectRoute}=require('../../middleware/protectedRoutes.js')
 const Feedback = require('../../module/feedback.js')
 const Router = express.Router()
 
-Router.post('/feedbackform',protectedRoutes,async(req,res)=>{
+Router.post('/feedbackform',protectRoute,async(req,res)=>{
     try {
         const{designation,department,subject,field,feedback}=req.body;
         if(!designation||!department||!subject||!field||!feedback){

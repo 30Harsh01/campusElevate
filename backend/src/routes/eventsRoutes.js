@@ -1,11 +1,11 @@
 const express = require('express')
 const Event = require("../../module/event.js")
-const protectedRoutes=require('../../middleware/protectedRoutes.js')
+const {protectRoute}=require('../../middleware/protectedRoutes.js')
 const EventBookings = require('../../module/eventbokings.js')
 const Router = express.Router()
 
 //generate event
-Router.post('/postevent',protectedRoutes, async (req, res) => {
+Router.post('/postevent',protectRoute, async (req, res) => {
     try {
         const { eventname,eventocassion, eventdescription, eventcategory,eventvenue, eventday, eventtimmings, eventimg } = req.body
         if (!eventname || !eventocassion|| !eventdescription || !eventcategory|| !eventvenue || !eventday || !eventtimmings || !eventimg) {
@@ -35,7 +35,7 @@ Router.get('/getevent', async (req, res) => {
 
 
 //userevent
-Router.get('/getuserevent',protectedRoutes,async(req,res)=>{
+Router.get('/getuserevent',protectRoute,async(req,res)=>{
     try {
         // const{user,eventid}=req.body
         console.log(req.user._id)
@@ -51,7 +51,7 @@ Router.get('/getuserevent',protectedRoutes,async(req,res)=>{
 })
 
 //eventBooking
-Router.post('/bookevent/:id',protectedRoutes,async(req,res)=>{
+Router.post('/bookevent/:id',protectRoute,async(req,res)=>{
     try {
 
         function generateUnique4DigitNumber() {

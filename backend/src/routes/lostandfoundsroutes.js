@@ -3,7 +3,7 @@ const express = require('express');
 const LostItem = require('../../module/LostItem.js');
 const FoundItem = require('../../module/FoundItem.js');
 // const protectedRoutes=require('../../middleware/protectedRoutes.js');
-const protectRoute = require('../../middleware/protectedRoutes.js');
+const {protectRoute} = require('../../middleware/protectedRoutes.js');
 
 const router = express.Router();
 

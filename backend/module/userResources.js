@@ -9,10 +9,6 @@ const userResources = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // resourceImage:{
-    //     type:String,
-    //     required:true,
-    // },
     resourceDescription:{
         type:String,
     }

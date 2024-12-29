@@ -12,6 +12,8 @@ const websitefeedback=require('./routes/websitefeedbackRoutes.js')
 const donateRoute=require('./routes/donateRoute.js')
 const libraryRoutes=require('./routes/libraryRoutes.js')
 const lostandfound=require('./routes/lostandfoundsroutes.js')
+const adminRoutes=require('./routes/adminRoutes.js')
+const uploadRoutes=require('./routes/uploadRoutes.js')
 
 const app=express()
 
@@ -31,6 +33,9 @@ app.use('/websitefeedback',websitefeedback)
 app.use('/donate',donateRoute)
 app.use('/library',libraryRoutes)
 app.use('/lostandfound',lostandfound)
+app.use('/admin',adminRoutes)
+app.use('/upload',uploadRoutes)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads/lostitems'))); // Serve files statically
 
 const port=3000
 app.listen(port,()=>{

@@ -1,12 +1,13 @@
 const express = require('express')
 const UserResources = require('../../module/userResources.js')
 const BorrowedResource = require('../../module/resourceBorrower.js')
-const protectedRoutes=require('../../middleware/protectedRoutes.js')
+// const protectedRoutes=require('../../middleware/protectedRoutes.js')
+const {protectRoute}=require('../../middleware/protectedRoutes.js')
 const Router = express.Router()
 
 
 //post resources
-Router.post("/postresources",protectedRoutes, async (req, res) => {
+Router.post("/postresources",protectRoute, async (req, res) => {
     try {
         const { Resourcename, ResourceCategory, resourceImage, resourceDescription } = req.body
         if (!Resourcename || !ResourceCategory || !resourceDescription) {
@@ -39,7 +40,7 @@ Router.get("/getResources", async (req, res) => {
     }
 })
 
-Router.post('/borrowresources',protectedRoutes,async(req,res)=>{
+Router.post('/borrowresources',protectRoute,async(req,res)=>{
     try {
         const {borrower,resource}=req.body
         const newborrower=await BorrowedResource.create({borrower:req.user._id,resource})
@@ -51,7 +52,7 @@ Router.post('/borrowresources',protectedRoutes,async(req,res)=>{
     }
 })
 
-Router.get('/borrowedresources',protectedRoutes,async(req,res)=>{
+Router.get('/borrowedresources',protectRoute,async(req,res)=>{
     try {
         const borrowed=await BorrowedResource.find()
         console.log(borrowed)

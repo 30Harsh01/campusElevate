@@ -1,6 +1,6 @@
 const express = require('express')
 const Library = require("../../module/librarySchema.js")
-const protectedRoutes=require('../../middleware/protectedRoutes.js')
+const {protectRoute}=require('../../middleware/protectedRoutes.js')
 const LibraryBookings = require('../../module/libraryBooking.js')
 const Router = express.Router()
 
@@ -20,7 +20,7 @@ Router.get('/getbooks', async (req, res) => {
 
 
 //post books
-Router.post('/postbook',protectedRoutes, async (req, res) => {
+Router.post('/postbook',protectRoute, async (req, res) => {
     try {
         const {bookName,category,author} = req.body
         if (!bookName|| !category || !author) {
@@ -37,7 +37,7 @@ Router.post('/postbook',protectedRoutes, async (req, res) => {
 
 
 //eventBooking
-Router.post('/issuebook/:id',protectedRoutes,async(req,res)=>{
+Router.post('/issuebook/:id',protectRoute,async(req,res)=>{
     try {
         const{issueddate,duedate}=req.body
         if(!issueddate||!duedate){
@@ -72,7 +72,7 @@ Router.post('/issuebook/:id',protectedRoutes,async(req,res)=>{
 
 
 //getissuedbooks
-Router.get('/getuserbooks',protectedRoutes,async(req,res)=>{
+Router.get('/getuserbooks',protectRoute,async(req,res)=>{
     try {
         // const{user,eventid}=req.body
         // console.log(req.user._id)
