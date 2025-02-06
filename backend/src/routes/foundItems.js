@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const FoundItem = require('../models/FoundItem');
 
-
-
-
 // Get all found items
 router.get('/', async (req, res) => {
   try {

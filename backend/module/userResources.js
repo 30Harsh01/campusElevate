@@ -11,6 +11,17 @@ const userResources = new mongoose.Schema({
     },
     resourceDescription:{
         type:String,
+    },
+    resourceImage:{
+        type:String,
+    },
+    resourceUploadedBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+    },
+    borrowed:{
+        type:Boolean,
+        default:false
     }
 })
 

@@ -13,16 +13,20 @@ const donateRoute=require('./routes/donateRoute.js')
 const libraryRoutes=require('./routes/libraryRoutes.js')
 const lostandfound=require('./routes/lostandfoundsroutes.js')
 const adminRoutes=require('./routes/adminRoutes.js')
-const uploadRoutes=require('./routes/uploadRoutes.js')
+// const uploadRoutes=require('./routes/uploadRoutes.js')
 const winston = require('winston');
 const helmet = require('helmet');
-app.use(helmet());
 
 const app=express()
 
+app.use(helmet());
 app.use(express.static(path.join(__dirname,'dist')))
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
+
+
+app.use(cors());
+  
 
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'dist','index.html'))
@@ -38,7 +42,7 @@ app.use('/library',libraryRoutes)
 app.use('/lostandfound',lostandfound)
 app.use('/admin',adminRoutes)
 // app.use('/upload',uploadRoutes)
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads/lostitems'))); // Serve files statically
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const logger = winston.createLogger({
     level: 'info',
