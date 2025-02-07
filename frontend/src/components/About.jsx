@@ -6,6 +6,7 @@ function About() {
      
       <h2 className="text-2xl font-bold mb-4">Campus Events and Communication</h2>
       <div className='bg-blue-900 p-5 text-white'>
+        
         <p className="mb-4">Introducing a new section on our website: Campus Events and Communication.</p>
       <p className="mb-4">The section will encompass details of various events within our campus community.</p>
       <p className="mb-4">Events will span across different categories including club gatherings, college events, cultural festivals, and sports tournaments.</p>

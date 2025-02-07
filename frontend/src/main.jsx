@@ -25,6 +25,9 @@ import Uploadlost from './components/Uploadlost.jsx'
 import Uploadfound from './components/Uploadfound.jsx'
 import Lost from './components/Lost.jsx'
 import Found from './components/Found.jsx'
+import Navigation from './components/Navigation.jsx'
+import NaviTable from './components/NaviTable.jsx'
+import Track from './components/Track.jsx'
 // import Layout1 from './Layout1.jsx'
 // import ResourceRender from './components/ResourceRender.jsx'
 
@@ -57,6 +60,9 @@ const router=createBrowserRouter(
        <Route path="/uploadfound" element={<Uploadfound/>}/>
        <Route path="/lost" element={<Lost/>}/>
        <Route path="/found" element={<Found/>}/>
+       <Route path="/navigation" element={<Navigation/>}/>
+       <Route path="/navitable" element={<NaviTable/>}/>
+       <Route path="/track" element={<Track/>}/>
       </Route>
       
   )

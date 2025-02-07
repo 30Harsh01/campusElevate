@@ -21,7 +21,7 @@ function Nav() {
   };
 
   return (
-    <nav className={`w-full flex flex-wrap justify-between items-center top-0 ${isGoGreenSection ? 'bg-green-700' : 'bg-blue-950'}`}>
+    <nav className={`w-full flex flex-wrap justify-between items-center top-0 ${isGoGreenSection ? 'bg-green-700' : 'bg-gray-700'}`}>
       <Link to='/'>
         <img className='h-32 object-contain' src={logo} alt='logo' />
       </Link>
@@ -93,6 +93,16 @@ function Nav() {
               }
             >
               Feedback
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/navigation"
+              className={({ isActive }) =>
+                `${isActive ? "bg-blue-900 p-2" : "text-slate-300"} hover:text-white hover:border-white cursor-pointer`
+              }
+            >
+              Navigation
             </NavLink>
           </li>
           <li>
