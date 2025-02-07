@@ -6,12 +6,12 @@ import {NavLink} from 'react-router-dom'
 function Navigation() {
   return (
     <div>
-    <div className='text-center bg-[url("https://t4.ftcdn.net/jpg/02/43/11/85/360_F_243118595_69w58kvRFGA6rqKaFCBnbaY9o8bSiWPe.jpg")] bg-no-repeat bg-cover h-screen w-full  '>
+    <div className='text-center bg-[url("https://media.istockphoto.com/id/1708195462/vector/isometric-gps-map-navigation-to-house-view-from-above-map-buildings-detailed-view-of-city.jpg?s=612x612&w=0&k=20&c=dCostOFgoUHztrKr7Jw56gOxukaAuTA5tMpSWN-BwoU=")] bg-no-repeat bg-cover h-screen w-full  '>
     <div>
 <div className=' text-5xl font-bold '>
     <div className='flex items-center justify-center p-5 '>
-        <h1 className='text-white'>Track {' '}
-        <span className='text-yellow-200'>
+        <h1 className='text-black'>Track {' '}
+        <span className='text-blue-800'>
     <Typewriter 
             words={['Bus Location', 'Bus Route']}
             cursor
@@ -29,7 +29,7 @@ function Navigation() {
     </div>
     <div className='flex justify-center items-center mt-20'>
     <NavLink to='/navitable'>
-    <button type="button" className="bg-gradient-to-r  text-center from-green-400 to-blue-500  p-3 rounded-lg mt-32 text-black font-bold text-[25px] border-4">
+    <button type="button" className="bg-gradient-to-r from-gray-500 via-blue-700 to-gray-400 ...  p-3 rounded-lg mt-32 text-black font-bold text-[25px] border-2 border-gray-700">
   Track College Bus
 </button>
     </NavLink> 

@@ -3,25 +3,24 @@ import toast from 'react-hot-toast';
 
 const QueryForm = () => {
   const [feedback, setFeedback] = useState({
-    name:"",
-    designation:"",
-    department:"",
-    feedback:""
+    name: "",
+    designation: "",
+    department: "",
+    feedback: ""
   });
 
   const handleChange = (e) => {
-    setFeedback({...feedback,[e.target.name]:e.target.value.trim()});
+    setFeedback({ ...feedback, [e.target.name]: e.target.value.trim() });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(feedback)
+    console.log(feedback);
     const url = "http://localhost:3000/websitefeedback/feedbackform";
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        // 'auth': localStorage.getItem('auth')
       },
       body: JSON.stringify(feedback)
     });
@@ -34,44 +33,43 @@ const QueryForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-screen max-w-lg mx-auto bg-slate-400 h-144 p-4 rounded-lg">
-        <h1 className='font-bold m-4 text-center text-[22px]'>FEEDBACKS/SUGGESTIONS </h1>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <label htmlFor="name" className='w-full p-1'>Name : &nbsp;
-        <input required name='name' onChange={handleChange} type="text" /></label> <br/><br/>
-        <label htmlFor="designation" className='w-full'>Designation :  &nbsp;
-        <select required onChange={handleChange} name="designation" className='p-1' >Select
-        <option value="student">Student</option>
-        <option value="faculty">Faculty</option>
-        <option value="workers">workers</option>
-        </select>
-        <br/><br/>
-        </label>
-        <label htmlFor="department" className='w-full'>Department : &nbsp;
-        <select required onChange={handleChange} name="department" className='p-1'>
-        <option value="CSE">CSE</option>
-        <option value="ECE">ECE</option>
-        <option value="IT">IT</option>
-        <option value="Pharmacy">Pharmacy</option>
-        </select></label>
-        <br/><br/>
-        <textarea required
-          className="mt-2 w-full px-3 py-2 leading-tight text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
-          placeholder="Looking for feedback or suggestions, please share your thoughts briefly to help improve our services or products."
-          // value='feedback'
-          onChange={handleChange}
-          name='feedback'
-        ></textarea>
-      </div>
-      <div className="flex justify-end">
-        <button
-          className="bg-blue-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
+    <div className="flex justify-center items-center ">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white shadow-lg rounded-lg p-6">
+        <h1 className='font-bold text-center text-2xl text-blue-900 mb-4'>FEEDBACKS / SUGGESTIONS</h1>
+        <div className="mb-4">
+          <label htmlFor="name" className='block text-gray-700 font-medium mb-2'>Name:</label>
+          <input required name='name' onChange={handleChange} type="text" className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="designation" className='block text-gray-700 font-medium mb-2'>Designation:</label>
+          <select required onChange={handleChange} name="designation" className='w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'>
+            <option value="">Select</option>
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="workers">Workers</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="department" className='block text-gray-700 font-medium mb-2'>Department:</label>
+          <select required onChange={handleChange} name="department" className='w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'>
+            <option value="">Select</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="IT">IT</option>
+            <option value="Pharmacy">Pharmacy</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="feedback" className='block text-gray-700 font-medium mb-2'>Feedback:</label>
+          <textarea required className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Looking for feedback or suggestions, please share your thoughts briefly to help improve our services or products." onChange={handleChange} name='feedback'></textarea>
+        </div>
+        <div className="flex justify-center">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

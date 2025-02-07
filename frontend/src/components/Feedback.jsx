@@ -61,10 +61,10 @@ function Feedback() {
   return (
 
 
-    <div className='flex items-center justify-center p-3 m-auto bg-blue-200'>
+    <div className='flex items-center justify-center p-3 m-auto bg-gray-100'>
       <Form onSubmit={handleonsubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <h2 className='font-bold text-3xl capitalize p-5 m-5 rounded bg-blue-950 text-white'>Feedback/Suggestions/Improvement scopes </h2>
+          <h2 className='font-bold text-3xl capitalize p-3 text-center m-5 rounded bg-blue-950 text-white'>Feedback/Suggestions/Improvement scopes </h2>
           <Form.Label className='font-semibold'>Designation :</Form.Label>
           <Form.Select required onChange={handleOnChange} name='designation' className='p-2 rounded-lg' aria-label="Default select">
             <option>Select your Designation</option>

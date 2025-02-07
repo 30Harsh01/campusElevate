@@ -36,7 +36,7 @@ function Nav() {
             <NavLink 
               to="/" 
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"} text-white  hover:border-white cursor-pointer`
               }
             >
               Home
@@ -46,7 +46,7 @@ function Nav() {
             <NavLink 
               to="/about"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               About
@@ -56,7 +56,7 @@ function Nav() {
             <NavLink 
               to="/resources"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               Resources
@@ -66,7 +66,7 @@ function Nav() {
             <NavLink 
               to="/library"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               Library
@@ -76,7 +76,7 @@ function Nav() {
             <NavLink 
               to="/events"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               Events
@@ -89,7 +89,7 @@ function Nav() {
             <NavLink 
               to="/feedback"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  hover:text-white  hover:border-white cursor-pointer`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               Feedback
@@ -98,8 +98,8 @@ function Nav() {
           <li>
             <NavLink
               to="/navigation"
-              className={({ isActive }) =>
-                `${isActive ? "bg-blue-900 p-2" : "text-slate-300"} hover:text-white hover:border-white cursor-pointer`
+              className={({isActive})=>
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-white  hover:border-white cursor-pointer`
               }
             >
               Navigation
@@ -109,7 +109,7 @@ function Nav() {
             <NavLink 
               to="/gogreen"
               className={({isActive})=>
-                ` ${isActive? "bg-blue-900 p-2": "text-slate-300"}  text-green-400 font-bold border-2 border-green-400 p-1 hover:text-white hover:bg-green-600 cursor-pointer rounded-md flex`
+                ` ${isActive? "bg-gray-500 p-2": "text-white"}  text-green-400 font-bold border-2 border-green-400 p-1 hover:text-white hover:bg-green-600 cursor-pointer rounded-md flex`
               }
             >
               <GiFruitTree size='1.5em' />
@@ -123,9 +123,9 @@ function Nav() {
           Signin/Signup
         </NavLink>
       ) : (
-        <Button onClick={handleLogout} className='hidden md:flex bg-slate-500 p-2 rounded-lg text-white font-bold border-2 hover:text-blue-950 cursor-pointer hover:border-2 hover:border-slate-400 mr-2'>
+        <button onClick={handleLogout} className='hidden md:flex bg-slate-500 p-2 rounded-lg text-white font-bold border-2 hover:text-blue-950 cursor-pointer hover:border-2 hover:border-slate-400 mr-5'>
           Logout
-        </Button>
+        </button>
       )}
     </nav>
   );

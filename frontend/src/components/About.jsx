@@ -2,10 +2,10 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='text-center justify-center p-5 m-auto bg-blue-200'>
+    <div className='text-center justify-center p-5 m-auto bg-gray-100'>
      
       <h2 className="text-2xl font-bold mb-4">Campus Events and Communication</h2>
-      <div className='bg-blue-900 p-5 text-white'>
+      <div className='bg-gray-500 p-5 text-white'>
         
         <p className="mb-4">Introducing a new section on our website: Campus Events and Communication.</p>
       <p className="mb-4">The section will encompass details of various events within our campus community.</p>
@@ -17,7 +17,7 @@ function About() {
       <br /><br />
 
       <h2 className="text-2xl font-bold mb-4">Campus Resource Optimization</h2>
-      <div className='bg-blue-900 p-5 text-white'>
+      <div className='bg-gray-500 p-5 text-white'>
       <div className="mb-8">
         <h3 className="text-lg font-semibold mb-2">Lost and Found Section</h3>
         <p className="mb-4">Dedicated space for students to report lost items like watches, ID cards, or library cards.</p>
@@ -39,7 +39,7 @@ function About() {
 
       <br /><br />
       <h2 className="text-2xl font-bold mb-4">Automated Library Services</h2>
-      <div className='bg-blue-900 p-5 text-white'>
+      <div className='bg-gray-500 p-5 text-white'>
       <p className="mb-4">Real-time status updates on book availability.</p>
       <p className="mb-4">Allows students to check if a specific book is available for issue.</p>
       <p className="mb-4">Provides comprehensive information on issued books, including submission dates and late submission fines.</p>
@@ -51,7 +51,7 @@ function About() {
 <br /><br />
 
 <h2 className="text-2xl font-bold mb-4">Campus Feedback and Improvement</h2>
-<div className='bg-blue-900 p-5 text-white'>
+<div className='bg-gray-500 p-5 text-white'>
       <p className="mb-4">Feedback Submission Portal facilitates student input on college management.</p>
       <p className="mb-4">User-friendly form ensures easy feedback submission.</p>
       <p className="mb-4">Enhances transparency in communication between students and management.</p>
@@ -61,7 +61,7 @@ function About() {
 </div>
 <br /><br />
 <h2 className="text-2xl font-bold mb-4">Environmental Sustainability</h2>
-<div className='bg-blue-900 p-5 text-white'>
+<div className='bg-gray-500 p-5 text-white'>
       <p className="mb-4">This section includes educational content in the form of articles, videos that will inculcate awareness and zest for promoting environmental sustainability.</p>
       
       <div className="mb-4">

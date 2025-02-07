@@ -7,11 +7,11 @@ import {NavLink} from 'react-router-dom'
 function Resources() {
   return (
     <>
-    <div className='h-screen   bg-[url("https://img.freepik.com/premium-psd/seo-business-annual-report-with-isometric-optimazion_737962-19.jpg?size=626&ext=jpg&ga=GA1.1.7539172.1714749172&semt=ais")] w-full bg-contain'>
+    <div className='h-screen w-full bg-gray-100 bg-contain'>
     <div className=' flex items-center justify-center '>
    
     <NavLink to='/upload'>
-    <button type="button" className="m-5 h-18 w-auto bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ... p-3 m-3 rounded-full text-black font-bold text-[25px] border-4">
+    <button type="button" className="m-5 h-18 w-auto bg-gray-500 p-3 rounded-full text-white hover:bg-gray-600 font-bold text-[25px] border-4">
  UPLOAD RESOURCES
 </button>
     </NavLink>
@@ -19,22 +19,22 @@ function Resources() {
   
     <div className='flex flex-wrap items-center justify-center gap-3 m-5'>
     <NavLink to='/all'>
-    <button type="button" className=" h-64 w-64 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
+    <button type="button" className=" h-64 w-64 text-center bg-gradient-to-r from-gray-500 via-blue-700 to-gray-400 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
   ALL RESOURCES
 </button>
     </NavLink>
     <NavLink to='/your'>
-    <button type="button" className="h-64 w-64 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
+    <button type="button" className="h-64 w-64 text-center  bg-gradient-to-r from-gray-500 via-blue-700 to-gray-400 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
  YOUR RESOURCES
 </button>
     </NavLink>
     <NavLink to='/uploaded'>
-    <button type="button" className="h-64 w-64 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
+    <button type="button" className="h-64 w-64 text-center  bg-gradient-to-r from-gray-500 via-blue-700 to-gray-400 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
  UPLOADED RESOURCES
 </button>
     </NavLink>
     <NavLink to='/lostfound'>
-    <button type="button" className="h-64 w-64 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
+    <button type="button" className="h-64 w-64 text-center  bg-gradient-to-r from-gray-500 via-blue-700 to-gray-400 ... p-5 rounded-lg text-black font-bold text-[25px] border-4">
 LOST AND FOUND
 </button>
     </NavLink>
